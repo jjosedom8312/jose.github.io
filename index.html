@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -124,6 +123,7 @@ h2{font-size:30px; margin:0 0 16px}
   background:linear-gradient(135deg, rgba(125,211,252,.3), rgba(167,139,250,.2));
 }
 
+/* ===== UPDATED PHOTO CARD ===== */
 .photo-card{
   background:rgba(0,0,0,.35);
   border-radius:var(--radius);
@@ -131,13 +131,18 @@ h2{font-size:30px; margin:0 0 16px}
   text-align:center;
 }
 .photo{
-  width:200px;height:200px;
-  border-radius:999px;
+  width:220px;
+  height:220px;          /* +10% size */
+  border-radius:16px;    /* square with soft corners */
   overflow:hidden;
   border:6px solid #fff;
   margin:auto;
 }
-.photo img{width:100%;height:100%;object-fit:cover}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
 /* ================= LISTS ================= */
 .list{display:grid; gap:16px}
@@ -212,10 +217,18 @@ footer{
   <div class="container hero-grid">
     <div>
       <h1>Hi, I’m Jose.</h1>
-      <p>Mechanical Engineering student at Colorado School of Mines focused on aerospace systems, simulation, and embedded engineering.</p>
+      <p>
+        Mechanical Engineering student at Colorado School of Mines focused on aerospace systems,
+        simulation, and embedded engineering.
+      </p>
+
       <div class="pills">
-        <span>CAD / Design</span><span>Simulation</span><span>Embedded / C++</span><span>Space Systems</span>
+        <span>CAD / Design</span>
+        <span>Simulation</span>
+        <span>Embedded / C++</span>
+        <span>Space Systems</span>
       </div>
+
       <div class="buttons">
         <a class="primary" href="#projects">View Projects</a>
         <a href="assets/resume.pdf" target="_blank">Resume (PDF)</a>
@@ -225,10 +238,13 @@ footer{
 
     <div class="photo-card">
       <div class="photo">
-        <img src="assets/profile.jpg" alt="Jose">
+        <img src="assets/profile.jpg" alt="Jose Dominguez">
       </div>
-      <p style="margin-top:12px">Northglenn, CO<br>
-      <a href="" style="color:#fff"></a></p>
+      <p style="margin-top:12px">
+        Northglenn, CO<br>
+        <a href=">
+        </a>
+      </p>
     </div>
   </div>
 </section>
@@ -239,8 +255,10 @@ footer{
     <h2>Education</h2>
     <div class="item">
       <h3>Colorado School of Mines</h3>
-      <p>B.S. Mechanical Engineering — May 2026<br>
-         M.S. Mechanical Engineering — May 2027</p>
+      <p>
+        B.S. Mechanical Engineering — May 2026<br>
+        M.S. Mechanical Engineering — May 2027
+      </p>
     </div>
   </div>
 </section>
@@ -299,9 +317,12 @@ footer{
   <div class="container">
     <h2>Skills</h2>
     <div class="skills">
-      <div class="skill">C++</div><div class="skill">Python</div>
-      <div class="skill">MATLAB</div><div class="skill">CAD</div>
-      <div class="skill">Simulation</div><div class="skill">Git</div>
+      <div class="skill">C++</div>
+      <div class="skill">Python</div>
+      <div class="skill">MATLAB</div>
+      <div class="skill">CAD</div>
+      <div class="skill">Simulation</div>
+      <div class="skill">Git</div>
     </div>
   </div>
 </section>
