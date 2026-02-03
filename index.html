@@ -403,7 +403,7 @@ h2{font-size:30px; margin:0 0 16px}
   }
 }
 
-/* ================= PROJECTS (MINES THEME) ================= */
+/* ================= PROJECTS (SQUARE TILES – MINES THEME) ================= */
 #projects{
   background: var(--mines-blue);
 }
@@ -415,7 +415,7 @@ h2{font-size:30px; margin:0 0 16px}
 .projects-title{
   text-align:center;
   font-size:34px;
-  margin:0 0 28px;
+  margin:0 0 30px;
   color:#ffffff;
 }
 
@@ -434,54 +434,61 @@ h2{font-size:30px; margin:0 0 16px}
   .project-grid{ grid-template-columns:1fr; }
 }
 
-/* card */
+/* square card */
 .project-card{
   background:#ffffff;
-  border-radius:28px;
-  padding:26px 22px;
-  min-height:320px;
+  border-radius:26px;
+  padding:22px;
+  aspect-ratio:1 / 1;              /* ✅ perfect square */
   display:flex;
   flex-direction:column;
+  justify-content:center;
   text-align:center;
   box-shadow:0 18px 40px rgba(0,0,0,0.18);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 26px 60px rgba(0,0,0,0.25);
 }
 
 /* title */
 .project-card h3{
-  margin:0 0 18px;
-  font-size:26px;
-  color:var(--mines-blue);
+  margin:0 0 14px;
+  font-size:24px;
   font-weight:900;
+  color:var(--mines-blue);
 }
 
 /* tech line */
 .project-tech{
-  color:rgba(11,18,32,0.75);
   font-weight:800;
   font-size:14px;
-  margin-bottom:16px;
+  color:rgba(11,18,32,0.75);
+  margin-bottom:14px;
 }
 
 /* description */
 .project-desc{
+  font-size:14px;
   color:rgba(11,18,32,0.80);
   line-height:1.45;
-  font-size:14.5px;
   margin:0;
   flex:1;
 }
 
 /* link */
 .project-link{
-  margin-top:18px;
+  margin-top:16px;
   font-weight:900;
-  text-decoration:none;
+  font-size:16px;
   color:var(--mines-blue);
+  text-decoration:none;
   display:inline-flex;
   justify-content:center;
-  gap:8px;
   align-items:center;
-  font-size:16px;
+  gap:6px;
 }
 .project-link:hover{
   text-decoration:underline;
@@ -747,34 +754,60 @@ footer{
 
 <!-- PROJECTS -->
 <section class="light" id="projects">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="item">
-        <h3>CubeSat Power Modeling</h3>
-        <p>Modeled power generation and worst-case budgets.</p>
-        <div class="tags"><span>Power</span><span>Analysis</span><span>Space</span></div>
+  <div class="container projects-wrap">
+    <h2 class="projects-title">My Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Clue Board Game</h3>
+        <div class="project-tech">Technologies: Java, Git</div>
+        <p class="project-desc">
+          A classic Clue game based on the campus of Mines. Players can play against computers to win the game.
+        </p>
+        <a class="project-link" href="https://YOUR_GITHUB_LINK" target="_blank">Git →</a>
       </div>
-      <div class="item">
-        <h3>FreeFlyer Mission Scripting</h3>
-        <p>Orbit propagation and mission analysis.</p>
-        <div class="tags"><span>FreeFlyer</span><span>Orbit</span><span>Automation</span></div>
+
+      <div class="project-card">
+        <h3>Blood Typing Game</h3>
+        <div class="project-tech">Technologies: C++</div>
+        <p class="project-desc">
+          An educational game teaching blood type compatibility through simulated transfusions.
+        </p>
+        <a class="project-link" href="https://YOUR_GITHUB_LINK" target="_blank">Git →</a>
       </div>
+
+      <div class="project-card">
+        <h3>Psyche Chatbot</h3>
+        <div class="project-tech">Technologies: JavaScript, HTML, CSS</div>
+        <p class="project-desc">
+          A web app using IBM Watson Assistant to support mental health and daily routine management.
+        </p>
+        <a class="project-link" href="https://YOUR_GITHUB_LINK" target="_blank">Git →</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Microblading Business Website</h3>
+        <div class="project-tech">Technologies: React, Node.js, JavaScript</div>
+        <p class="project-desc">
+          A business website for Luminous Brows (Lafayette, CO) with appointment booking.
+        </p>
+        <a class="project-link" href="https://YOUR_LIVE_LINK" target="_blank">Link →</a>
+      </div>
+
+      <div class="project-card">
+        <h3>TaskMate</h3>
+        <div class="project-tech">Technologies: Kotlin, Firebase</div>
+        <p class="project-desc">
+          A mobile app for collaborative task creation and management among teams.
+        </p>
+        <a class="project-link" href="https://YOUR_LINK" target="_blank">Link →</a>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section class="light" id="skills">
-  <div class="container">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill">C++</div><div class="skill">Python</div>
-      <div class="skill">MATLAB</div><div class="skill">CAD</div>
-      <div class="skill">Simulation</div><div class="skill">Git</div>
-    </div>
-  </div>
-</section>
 
 <footer>
   © <span id="y"></span> Jose Dominguez
