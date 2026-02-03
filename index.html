@@ -295,9 +295,9 @@ h2{font-size:30px; margin:0 0 16px}
   .edu-degrees{grid-template-columns:1fr}
 }
 
-  /* ================= RESEARCH CARD ================= */
+/* ================= RESEARCH CARD ================= */
 :root{
-  --research-pink: #ff4fb8; /* adjust if you want softer pink */
+  --research-pink: #ff4fb8;
 }
 
 .research-card{
@@ -305,25 +305,25 @@ h2{font-size:30px; margin:0 0 16px}
   grid-template-columns:320px 1fr;
   overflow:hidden;
   border-radius:var(--radius);
-  background:#fff;                 /* switch blue -> white (card stays white) */
+  background:#ffffff;
   border:3px solid var(--research-pink);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.10);
+  box-shadow:0 14px 34px rgba(0,0,0,0.10);
 }
 
 .research-media{
-  background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:18px;
   border-right:3px solid var(--research-pink);
+  background:#ffffff;
 }
 
 .research-media img{
-  width:90%;
-  max-width:240px;
-  height:auto;
-  object-fit:contain;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
 }
 
 .research-body{
@@ -333,7 +333,7 @@ h2{font-size:30px; margin:0 0 16px}
 .research-top{
   display:flex;
   justify-content:flex-end;
-  margin-bottom:6px; /* micro polish */
+  margin-bottom:6px;
 }
 
 .research-top .meta{
@@ -341,39 +341,41 @@ h2{font-size:30px; margin:0 0 16px}
   letter-spacing:.12em;
   text-transform:uppercase;
   font-weight:800;
-  color: rgba(11,18,32,0.6);
+  color:rgba(11,18,32,0.6);
 }
 
 .research-title{
   font-size:26px;
   margin:0 0 10px;
-  color:#0b1220;
+  color:var(--text-light);
 }
 
 .research-subtitle{
-  margin:0 0 12px;
+  margin:0 0 14px;
   font-weight:800;
-  color: rgba(11,18,32,0.85);
+  color:rgba(11,18,32,0.85);
 }
 
 .research-list{
   margin:0;
   padding-left:18px;
-  color: rgba(11,18,32,0.75);
+  color:rgba(11,18,32,0.75);
   line-height:1.5;
 }
 
-.research-list li{ margin-bottom:8px; }
+.research-list li{
+  margin-bottom:8px;
+}
 
-/* Mobile */
 @media(max-width:900px){
-  .research-card{grid-template-columns:1fr}
+  .research-card{
+    grid-template-columns:1fr;
+  }
   .research-media{
     border-right:none;
     border-bottom:3px solid var(--research-pink);
   }
 }
-
 
 /* ================= PROJECTS ================= */
 .projects{
@@ -528,37 +530,40 @@ footer{
 </section>
   
 <!-- RESEARCH -->
-<section class="dark" id="research" style="background:var(--bg-mid)">
+<section class="light" id="research">
   <div class="container">
     <h2>Research & Publications</h2>
 
     <div class="research-card">
-      <!-- Left image panel -->
+      <!-- Left photo -->
       <div class="research-media">
-        <!-- Put a logo/image here (optional). If you don’t want an image, tell me and I’ll make it a full-width card. -->
-        <img src="assets/research-logo.png" alt="Research">
+        <!-- Put your actual image here -->
+        <img src="assets/research.jpg" alt="Rover mobility research">
       </div>
 
-      <!-- Right content panel (NO inner bubbles) -->
+      <!-- Right content -->
       <div class="research-body">
         <div class="research-top">
           <div class="meta">RoSE Lab • Terramechanics</div>
         </div>
 
         <h3 class="research-title">Bayesian Optimization for Rover Mobility</h3>
-        <p class="research-subtitle">System Identification • Terrain Parameter Estimation</p>
+        <p class="research-subtitle">
+          System Identification • Terrain Parameter Estimation
+        </p>
 
         <ul class="research-list">
           <li>Developed Bayesian Optimization methods to infer soil parameters from rover motion data.</li>
-          <li>Built analysis pipelines for simulation + dataset validation and repeatable experiments.</li>
+          <li>Built simulation and data analysis pipelines for repeatable validation experiments.</li>
           <li>Created the “RoSE Lab Rover Mobility Dataset” for benchmarking and model evaluation.</li>
-          <li><strong>Publication:</strong> Author(s), “Paper Title,” Conference/Journal, Year. (Add link later)</li>
+          <li><strong>Publication:</strong> Author(s), “Paper Title,” Conference/Journal, Year.</li>
         </ul>
       </div>
     </div>
 
   </div>
 </section>
+
 
   
 <!-- EXPERIENCE -->
