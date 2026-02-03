@@ -403,21 +403,90 @@ h2{font-size:30px; margin:0 0 16px}
   }
 }
 
-/* ================= PROJECTS ================= */
-.projects{
+/* ================= PROJECTS (MINES THEME) ================= */
+#projects{
+  background: var(--mines-blue);
+}
+
+.projects-wrap{
+  padding-top:10px;
+}
+
+.projects-title{
+  text-align:center;
+  font-size:34px;
+  margin:0 0 28px;
+  color:#ffffff;
+}
+
+/* grid */
+.project-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
+  grid-template-columns:repeat(4, 1fr);
+  gap:22px;
 }
-@media(max-width:800px){.projects{grid-template-columns:1fr}}
-.tags span{
-  display:inline-block;
-  padding:6px 10px;
-  margin:6px 6px 0 0;
-  border-radius:999px;
-  font-size:12px;
-  background:rgba(125,211,252,.15);
+
+/* responsive */
+@media(max-width:1100px){
+  .project-grid{ grid-template-columns:repeat(2, 1fr); }
 }
+@media(max-width:650px){
+  .project-grid{ grid-template-columns:1fr; }
+}
+
+/* card */
+.project-card{
+  background:#ffffff;
+  border-radius:28px;
+  padding:26px 22px;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  box-shadow:0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* title */
+.project-card h3{
+  margin:0 0 18px;
+  font-size:26px;
+  color:var(--mines-blue);
+  font-weight:900;
+}
+
+/* tech line */
+.project-tech{
+  color:rgba(11,18,32,0.75);
+  font-weight:800;
+  font-size:14px;
+  margin-bottom:16px;
+}
+
+/* description */
+.project-desc{
+  color:rgba(11,18,32,0.80);
+  line-height:1.45;
+  font-size:14.5px;
+  margin:0;
+  flex:1;
+}
+
+/* link */
+.project-link{
+  margin-top:18px;
+  font-weight:900;
+  text-decoration:none;
+  color:var(--mines-blue);
+  display:inline-flex;
+  justify-content:center;
+  gap:8px;
+  align-items:center;
+  font-size:16px;
+}
+.project-link:hover{
+  text-decoration:underline;
+}
+
 
 /* ================= SKILLS ================= */
 .skills{
