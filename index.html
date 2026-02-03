@@ -496,20 +496,51 @@ h2{font-size:30px; margin:0 0 16px}
 }
 
 
-/* ================= SKILLS ================= */
-.skills{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+/* ================= SKILLS (SQUARE TILES) ================= */
+#skills{
+  background: var(--mines-blue);
 }
-@media(max-width:700px){.skills{grid-template-columns:repeat(2,1fr)}}
-.skill{
+
+.skills-wrap{
+  padding-top:10px;
+}
+
+.skills-title{
   text-align:center;
-  padding:12px;
-  border-radius:14px;
-  background:#f7d48a;
-  font-weight:800;
+  font-size:34px;
+  margin:0 0 30px;
+  color:#ffffff;
 }
+
+/* grid */
+.skill-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:18px;
+  justify-content:center;
+}
+
+/* square tile */
+.skill-tile{
+  background:#ffffff;
+  border-radius:20px;
+  aspect-ratio:1 / 1;          /* square */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:900;
+  font-size:16px;
+  color:var(--mines-blue);
+  box-shadow:0 14px 30px rgba(0,0,0,0.18);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.skill-tile:hover{
+  transform:translateY(-4px);
+  box-shadow:0 22px 46px rgba(0,0,0,0.25);
+}
+
 
 /* ================= FOOTER ================= */
 footer{
@@ -806,6 +837,30 @@ footer{
 
 
     </div>
+  </div>
+</section>
+<!-- SKILLS -->
+<section class="light" id="skills">
+  <div class="container skills-wrap">
+    <h2 class="skills-title">Skills</h2>
+
+    <div class="skill-grid">
+      <div class="skill-tile">SolidWorks</div>
+      <div class="skill-tile">Arduino IDE</div>
+      <div class="skill-tile">MATLAB</div>
+      <div class="skill-tile">Mathcad</div>
+      <div class="skill-tile">LabVIEW</div>
+      <div class="skill-tile">EES</div>
+      <div class="skill-tile">Python</div>
+      <div class="skill-tile">LaTeX</div>
+      <div class="skill-tile">Ultimaker Cura</div>
+      <div class="skill-tile">Microsoft Suite</div>
+      <div class="skill-tile">FreeFlyer</div>
+      <div class="skill-tile">C++</div>
+      <div class="skill-tile">Bilingual (Spanish)</div>
+      <div class="skill-tile">Machine Shop Milling</div>
+    </div>
+
   </div>
 </section>
 
