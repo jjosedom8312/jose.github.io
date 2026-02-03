@@ -376,6 +376,112 @@ h2{font-size:30px; margin:0 0 16px}
     border-bottom:3px solid var(--research-pink);
   }
 }
+/* ================= WORK EXPERIENCE CARDS ================= */
+
+/* Color tokens */
+:root{
+  --frog-green: #3fb950;   /* frog-style green */
+  --mines-blue: #002d62;   /* Mines blue (already used in Education) */
+  --xp-black: #111111;     /* neutral black */
+}
+
+/* Base card (same structure as research-card) */
+.experience-card{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  overflow:hidden;
+  border-radius:var(--radius);
+  background:#ffffff;
+  box-shadow:0 14px 34px rgba(0,0,0,0.10);
+  margin-bottom:36px;
+}
+
+/* Left media */
+.experience-media{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:#ffffff;
+}
+
+/* Image handling */
+.experience-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* Right body */
+.experience-body{
+  padding:22px 24px;
+}
+
+/* Meta line */
+.experience-meta{
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:800;
+  color:rgba(11,18,32,0.6);
+  margin-bottom:6px;
+}
+
+.experience-title{
+  font-size:26px;
+  margin:0 0 6px;
+}
+
+.experience-subtitle{
+  margin:0 0 14px;
+  font-weight:800;
+  color:rgba(11,18,32,0.85);
+}
+
+.experience-list{
+  margin:0;
+  padding-left:18px;
+  color:rgba(11,18,32,0.75);
+  line-height:1.5;
+}
+
+.experience-list li{
+  margin-bottom:8px;
+}
+
+/* ---------- Color variants ---------- */
+.experience-green{
+  border:3px solid var(--frog-green);
+}
+.experience-green .experience-media{
+  border-right:3px solid var(--frog-green);
+}
+
+.experience-blue{
+  border:3px solid var(--mines-blue);
+}
+.experience-blue .experience-media{
+  border-right:3px solid var(--mines-blue);
+}
+
+.experience-black{
+  border:3px solid var(--xp-black);
+}
+.experience-black .experience-media{
+  border-right:3px solid var(--xp-black);
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .experience-card{
+    grid-template-columns:1fr;
+  }
+  .experience-media{
+    border-right:none !important;
+    border-bottom:3px solid currentColor;
+  }
+}
 
 /* ================= PROJECTS ================= */
 .projects{
@@ -576,17 +682,93 @@ open source datashee</li>
 
 
   
-<!-- EXPERIENCE -->
+<!-- WORK EXPERIENCE -->
 <section class="light" id="experience">
   <div class="container">
     <h2>Work Experience</h2>
-    <div class="item">
-      <h3>Job Title — Company</h3>
-      <ul>
-        <li>Strong action-oriented bullet</li>
-        <li>Tools + results</li>
-      </ul>
+
+    <!-- 1) Frog green -->
+    <div class="experience-card experience-green">
+      <div class="experience-media">
+        <img src="assets/experience1.jpg" alt="Experience 1">
+      </div>
+      <div class="experience-body">
+        <div class="experience-meta">ROLE • COMPANY | DATE</div>
+        <h3 class="experience-title">Job Title 1</h3>
+        <p class="experience-subtitle">Short descriptor (team, domain, or tech)</p>
+        <ul class="experience-list">
+          <li>Strong action verb + what you did + why it mattered.</li>
+          <li>Include tools, methods, or systems.</li>
+          <li>Quantify when possible.</li>
+        </ul>
+      </div>
     </div>
+
+    <!-- 2) Mines blue -->
+    <div class="experience-card experience-blue">
+      <div class="experience-media">
+        <img src="assets/experience2.jpg" alt="Experience 2">
+      </div>
+      <div class="experience-body">
+        <div class="experience-meta">ROLE • COMPANY | DATE</div>
+        <h3 class="experience-title">Job Title 2</h3>
+        <p class="experience-subtitle">Short descriptor</p>
+        <ul class="experience-list">
+          <li>Designed, analyzed, or implemented X.</li>
+          <li>Worked with Y systems or software.</li>
+          <li>Delivered Z outcome.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3) Black -->
+    <div class="experience-card experience-black">
+      <div class="experience-media">
+        <img src="assets/experience3.jpg" alt="Experience 3">
+      </div>
+      <div class="experience-body">
+        <div class="experience-meta">ROLE • COMPANY | DATE</div>
+        <h3 class="experience-title">Job Title 3</h3>
+        <p class="experience-subtitle">Short descriptor</p>
+        <ul class="experience-list">
+          <li>Responsibility or project focus.</li>
+          <li>Technical contribution.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4) Black -->
+    <div class="experience-card experience-black">
+      <div class="experience-media">
+        <img src="assets/experience4.jpg" alt="Experience 4">
+      </div>
+      <div class="experience-body">
+        <div class="experience-meta">ROLE • COMPANY | DATE</div>
+        <h3 class="experience-title">Job Title 4</h3>
+        <p class="experience-subtitle">Short descriptor</p>
+        <ul class="experience-list">
+          <li>Responsibility or project focus.</li>
+          <li>Technical contribution.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5) Black -->
+    <div class="experience-card experience-black">
+      <div class="experience-media">
+        <img src="assets/experience5.jpg" alt="Experience 5">
+      </div>
+      <div class="experience-body">
+        <div class="experience-meta">ROLE • COMPANY | DATE</div>
+        <h3 class="experience-title">Job Title 5</h3>
+        <p class="experience-subtitle">Short descriptor</p>
+        <ul class="experience-list">
+          <li>Responsibility or project focus.</li>
+          <li>Technical contribution.</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
