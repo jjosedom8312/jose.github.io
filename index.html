@@ -8,10 +8,9 @@
 <style>
 /* ================= THEME ================= */
 :root{
-  --mines-blue: #002d62; /* Colorado School of Mines blue */
   --bg-dark: #0b132b;
   --bg-mid: #1c2541;
-  --bg-light: #e9f1ff;
+  --bg-light: #ffffff;          /* white theme background */
   --card-dark: rgba(0,0,0,0.40);
   --card-light: #ffffff;
   --accent: #7dd3fc;
@@ -23,12 +22,15 @@
   --max: 1100px;
   --pad: 22px;
 
+  /* Mines card border color (blue only) */
+  --mines-blue: #002d62;
+
   /* +10% HERO sizing */
-  --hero-title: 62px;     /* was 56 */
-  --hero-desc: 18px;      /* was ~16 */
-  --pill-font: 14px;      /* was 13 */
-  --pill-py: 9px;         /* was 8 */
-  --pill-px: 13px;        /* was 12 */
+  --hero-title: 62px;
+  --hero-desc: 18px;
+  --pill-font: 14px;
+  --pill-py: 9px;
+  --pill-px: 13px;
 }
 
 *{box-sizing:border-box}
@@ -37,6 +39,7 @@ body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
   background: var(--bg-light);
+  color: var(--text-light);
 }
 
 /* ================= NAV ================= */
@@ -64,6 +67,14 @@ body{
   font-size:14px;
 }
 .nav a:hover{opacity:.85}
+.nav-cta{
+  padding:10px 12px;
+  border-radius:12px;
+  background:rgba(125,211,252,.22);
+  border:1px solid rgba(125,211,252,.35);
+  font-weight:800;
+}
+.nav-cta:hover{opacity:.9}
 
 /* ================= SECTIONS ================= */
 section{padding:90px 0; position:relative}
@@ -80,9 +91,13 @@ h2{font-size:30px; margin:0 0 16px}
   padding:18px;
   background:var(--card-light);
   border:1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
 }
 .item h3{margin:0 0 6px}
 .item ul{margin:0; padding-left:18px}
+
+/* Subtle background alternation on light sections */
+section.light:nth-of-type(even){background:#f3f7ff}
 
 /* ================= HERO ================= */
 .hero{
@@ -107,6 +122,9 @@ h2{font-size:30px; margin:0 0 16px}
 }
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr; text-align:center}
+}
+@media(max-width:700px){
+  .hero{min-height:78vh}
 }
 
 /* +10% bigger */
@@ -160,8 +178,8 @@ h2{font-size:30px; margin:0 0 16px}
   box-shadow: 0 18px 50px rgba(0,0,0,.35);
 }
 .photo{
-  width:280px;     /* bigger photo */
-  height:280px;    /* square */
+  width:min(280px, 72vw);
+  height:min(280px, 72vw);
   border-radius:10px; /* NOT circular */
   overflow:hidden;
   border:6px solid #fff;
@@ -195,6 +213,88 @@ h2{font-size:30px; margin:0 0 16px}
   width:22px;
   height:22px;
   fill:#fff;
+}
+
+/* ================= EDUCATION CARD ================= */
+.edu-card{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  overflow:hidden;
+  border-radius: var(--radius);
+  background:#fff;
+  border:3px solid var(--mines-blue);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.10);
+}
+.edu-media{
+  background:#f6f8fc;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  border-right:3px solid var(--mines-blue);
+}
+.edu-media img{
+  width:90%;
+  max-width:240px;
+  height:auto;
+  object-fit:contain;
+}
+.edu-body{
+  padding:22px 24px;
+}
+.edu-top{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-bottom:10px;
+}
+.edu-top .meta,
+.edu-top .location{
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:800;
+  color: rgba(11,18,32,0.6);
+}
+.edu-title{
+  font-size:26px;
+  margin:0 0 6px;
+  color: var(--mines-blue);
+}
+.edu-sub{
+  margin:0 0 14px;
+  font-weight:800;
+  color: rgba(11,18,32,0.85);
+}
+.edu-degrees{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+.degree{
+  border:1px solid rgba(0,0,0,0.10);
+  border-left:6px solid var(--mines-blue);
+  border-radius:14px;
+  padding:12px;
+  background:#fff;
+}
+.degree h4{
+  margin:0 0 6px;
+  font-size:14px;
+}
+.degree p{
+  margin:0;
+  font-size:13px;
+  color: rgba(11,18,32,0.7);
+}
+@media(max-width:900px){
+  .edu-card{grid-template-columns:1fr}
+  .edu-media{
+    border-right:none;
+    border-bottom:3px solid var(--mines-blue);
+  }
+  .edu-degrees{grid-template-columns:1fr}
 }
 
 /* ================= PROJECTS ================= */
@@ -244,12 +344,17 @@ footer{
 <div class="nav">
   <div class="nav-inner">
     <strong>Jose Dominguez</strong>
-    <div>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
+
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="assets/resume.pdf" target="_blank">Resume</a>
     </div>
   </div>
 </div>
@@ -269,7 +374,6 @@ footer{
       </div>
 
       <div class="buttons">
-        <!-- You said you want Resume instead of View Projects -->
         <a class="primary" href="assets/resume.pdf" target="_blank">Resume (PDF)</a>
         <a class="primary" href="assets/cv.pdf" target="_blank">CV (PDF)</a>
       </div>
@@ -288,14 +392,14 @@ footer{
           </svg>
         </a>
 
-        <!-- Email -->
-        <a href="mailto:YOUR_EMAIL_HERE" aria-label="Email">
+        <!-- Contact icon (no email in code) -->
+        <a href="#contact" aria-label="Contact">
           <svg viewBox="0 0 24 24">
             <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5zm-8 7h16V8l-8 5-8-5v10z"/>
           </svg>
         </a>
 
-        <!-- LinkedIn -->
+        <!-- LinkedIn (keep placeholder until you want to add it) -->
         <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HERE/" target="_blank" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24">
             <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4v12h-4V8zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V20h-4v-5.2c0-1.24-.02-2.83-1.72-2.83-1.72 0-1.98 1.34-1.98 2.74V20h-4V8z"/>
@@ -307,100 +411,43 @@ footer{
 </section>
 
 <!-- EDUCATION -->
-/* ================= EDUCATION CARD ================= */
-.edu-card{
-  display:grid;
-  grid-template-columns: 320px 1fr;
-  overflow:hidden;
-  border-radius: var(--radius);
-  background:#fff;
-  border:3px solid var(--mines-blue);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.10);
-}
+<section class="light" id="education">
+  <div class="container">
+    <h2>Education</h2>
 
-.edu-media{
-  background:#f6f8fc;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  border-right:3px solid var(--mines-blue);
-}
+    <div class="edu-card">
+      <!-- Left image panel -->
+      <div class="edu-media">
+        <!-- Put a logo image at assets/mines-logo.png -->
+        <img src="assets/mines-logo.png" alt="Colorado School of Mines">
+      </div>
 
-.edu-media img{
-  width:90%;
-  max-width:240px;
-  height:auto;
-  object-fit:contain;
-}
+      <!-- Right content panel -->
+      <div class="edu-body">
+        <div class="edu-top">
+          <div class="meta">Expected 2026–2027</div>
+          <div class="location">Golden, CO</div>
+        </div>
 
-.edu-body{
-  padding:22px 24px;
-}
+        <h3 class="edu-title">Colorado School of Mines</h3>
+        <p class="edu-sub">Mechanical Engineering</p>
 
-.edu-top{
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-bottom:10px;
-}
+        <div class="edu-degrees">
+          <div class="degree">
+            <h4>B.S. Mechanical Engineering</h4>
+            <p>Expected May 2026</p>
+          </div>
 
-.edu-top .meta,
-.edu-top .location{
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-weight:800;
-  color: rgba(11,18,32,0.6);
-}
+          <div class="degree">
+            <h4>M.S. Mechanical Engineering</h4>
+            <p>Expected May 2027</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-.edu-title{
-  font-size:26px;
-  margin:0 0 6px;
-  color: var(--mines-blue);
-}
-
-.edu-sub{
-  margin:0 0 14px;
-  font-weight:800;
-  color: rgba(11,18,32,0.85);
-}
-
-.edu-degrees{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:14px;
-}
-
-.degree{
-  border:1px solid rgba(0,0,0,0.10);
-  border-left:6px solid var(--mines-blue);
-  border-radius:14px;
-  padding:12px;
-  background:#fff;
-}
-
-.degree h4{
-  margin:0 0 6px;
-  font-size:14px;
-}
-
-.degree p{
-  margin:0;
-  font-size:13px;
-  color: rgba(11,18,32,0.7);
-}
-
-/* Mobile */
-@media(max-width:900px){
-  .edu-card{grid-template-columns:1fr}
-  .edu-media{
-    border-right:none;
-    border-bottom:3px solid var(--mines-blue);
-  }
-  .edu-degrees{grid-template-columns:1fr}
-}
+  </div>
+</section>
 
 <!-- EXPERIENCE -->
 <section class="light" id="experience">
@@ -439,11 +486,28 @@ footer{
         <h3>CubeSat Power Modeling</h3>
         <p>Modeled power generation and worst-case budgets.</p>
         <div class="tags"><span>Power</span><span>Analysis</span><span>Space</span></div>
+
+        <!-- Optional: link button -->
+        <div style="margin-top:12px;">
+          <a href="https://github.com/josedom8312/REPO_NAME" target="_blank"
+             style="display:inline-block; padding:10px 12px; border-radius:12px; border:1px solid rgba(0,0,0,0.12); text-decoration:none;">
+            View on GitHub →
+          </a>
+        </div>
       </div>
+
       <div class="item">
         <h3>FreeFlyer Mission Scripting</h3>
         <p>Orbit propagation and mission analysis.</p>
         <div class="tags"><span>FreeFlyer</span><span>Orbit</span><span>Automation</span></div>
+
+        <!-- Optional: link button -->
+        <div style="margin-top:12px;">
+          <a href="https://github.com/josedom8312/REPO_NAME" target="_blank"
+             style="display:inline-block; padding:10px 12px; border-radius:12px; border:1px solid rgba(0,0,0,0.12); text-decoration:none;">
+            View on GitHub →
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -457,6 +521,22 @@ footer{
       <div class="skill">C++</div><div class="skill">Python</div>
       <div class="skill">MATLAB</div><div class="skill">CAD</div>
       <div class="skill">Simulation</div><div class="skill">Git</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT (no email in code) -->
+<section class="light" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <div class="item">
+      <p style="margin:0 0 10px">
+        The best way to reach me right now is via LinkedIn or GitHub.
+      </p>
+      <p style="margin:0">
+        GitHub: <a href="https://github.com/josedom8312" target="_blank">github.com/josedom8312</a><br>
+        LinkedIn: <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HERE/" target="_blank">LinkedIn Profile</a>
+      </p>
     </div>
   </div>
 </section>
