@@ -496,9 +496,9 @@ h2{font-size:30px; margin:0 0 16px}
 }
 
 
-/* ================= SKILLS (SQUARE TILES) ================= */
+/* ================= SKILLS (THIN TILES) ================= */
 #skills{
-  background: var(--mines-blue);
+  background:#ffffff; /* white background */
 }
 
 .skills-wrap{
@@ -508,38 +508,39 @@ h2{font-size:30px; margin:0 0 16px}
 .skills-title{
   text-align:center;
   font-size:34px;
-  margin:0 0 30px;
-  color:#ffffff;
+  margin:0 0 26px;
+  color:var(--mines-blue);
 }
 
 /* grid */
 .skill-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
-  gap:18px;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:14px;
   justify-content:center;
 }
 
-/* square tile */
+/* thin tile */
 .skill-tile{
-  background:#ffffff;
-  border-radius:20px;
-  aspect-ratio:1 / 1;          /* square */
+  background:var(--mines-blue); /* blue tiles */
+  border-radius:14px;
+  height:54px;                  /* 👈 thin */
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   font-weight:900;
-  font-size:16px;
-  color:var(--mines-blue);
-  box-shadow:0 14px 30px rgba(0,0,0,0.18);
+  font-size:15px;
+  color:#ffffff;
+  box-shadow:0 10px 22px rgba(0,0,0,0.18);
   transition:transform .2s ease, box-shadow .2s ease;
 }
 
 .skill-tile:hover{
-  transform:translateY(-4px);
-  box-shadow:0 22px 46px rgba(0,0,0,0.25);
+  transform:translateY(-3px);
+  box-shadow:0 16px 34px rgba(0,0,0,0.25);
 }
+
 
 
 /* ================= FOOTER ================= */
