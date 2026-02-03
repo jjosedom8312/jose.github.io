@@ -31,6 +31,13 @@
 
   /* Mines blue for Education border */
   --mines-blue: #002d62;
+
+  /* Research pink */
+  --research-pink: #ff4fb8;
+
+  /* Experience colors */
+  --frog-green: #3fb950;
+  --xp-black: #111111;
 }
 
 *{box-sizing:border-box}
@@ -111,7 +118,6 @@ h2{font-size:30px; margin:0 0 16px}
   .hero-grid{grid-template-columns:1fr; text-align:center}
 }
 
-/* +10% bigger */
 .hero h1{
   font-size:var(--hero-title);
   color:var(--text-dark);
@@ -209,7 +215,6 @@ h2{font-size:30px; margin:0 0 16px}
   border:3px solid var(--mines-blue);
   box-shadow: 0 14px 34px rgba(0,0,0,0.10);
 }
-
 .edu-media{
   background:#fff;
   display:flex;
@@ -218,24 +223,18 @@ h2{font-size:30px; margin:0 0 16px}
   padding:18px;
   border-right:3px solid var(--mines-blue);
 }
-
 .edu-media img{
   width:90%;
   max-width:240px;
   height:auto;
   object-fit:contain;
 }
-
-.edu-body{
-  padding:22px 24px;
-}
-
+.edu-body{ padding:22px 24px; }
 .edu-top{
   display:flex;
   justify-content:flex-end;
-  margin-bottom:6px; /* micro-polish */
+  margin-bottom:6px;
 }
-
 .edu-top .location{
   font-size:12px;
   letter-spacing:.12em;
@@ -243,19 +242,16 @@ h2{font-size:30px; margin:0 0 16px}
   font-weight:800;
   color: rgba(11,18,32,0.6);
 }
-
 .edu-title{
   font-size:26px;
   margin:0 0 14px;
   color: var(--mines-blue);
 }
-
 .edu-degrees{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
 }
-
 .degree{
   border:1px solid rgba(0,0,0,0.10);
   border-left:6px solid var(--mines-blue);
@@ -263,28 +259,15 @@ h2{font-size:30px; margin:0 0 16px}
   padding:12px;
   background:#fff;
 }
-
-.degree h4{
-  margin:0 0 6px;
-  font-size:14px;
-}
-
-.degree p{
-  margin:0;
-  font-size:13px;
-  color: rgba(11,18,32,0.7);
-}
-
-/* Coursework bullets under each degree */
+.degree h4{ margin:0 0 6px; font-size:14px; }
+.degree p{ margin:0; font-size:13px; color: rgba(11,18,32,0.7); }
 .degree-list{
   margin:8px 0 0;
   padding-left:16px;
   font-size:12.5px;
   color: rgba(11,18,32,0.7);
 }
-.degree-list li{
-  margin-bottom:4px;
-}
+.degree-list li{ margin-bottom:4px; }
 
 @media(max-width:900px){
   .edu-card{grid-template-columns:1fr}
@@ -296,10 +279,6 @@ h2{font-size:30px; margin:0 0 16px}
 }
 
 /* ================= RESEARCH CARD ================= */
-:root{
-  --research-pink: #ff4fb8;
-}
-
 .research-card{
   display:grid;
   grid-template-columns:320px 1fr;
@@ -309,7 +288,6 @@ h2{font-size:30px; margin:0 0 16px}
   border:3px solid var(--research-pink);
   box-shadow:0 14px 34px rgba(0,0,0,0.10);
 }
-
 .research-media{
   display:flex;
   align-items:center;
@@ -318,30 +296,22 @@ h2{font-size:30px; margin:0 0 16px}
   border-right:3px solid var(--research-pink);
   background:#ffffff;
 }
-
 .research-media img{
   width:100%;
   height:100%;
   object-fit:cover;
   border-radius:12px;
 }
+.research-body{ padding:22px 24px; }
 
-.research-body{
-  padding:22px 24px;
-}
-
-.research-top{
-  display:flex;
-  justify-content:flex-end;
-  margin-bottom:6px;
-}
-
-.research-top .meta{
+/* YOU WERE USING THIS IN HTML BUT IT WAS MISSING IN CSS */
+.research-meta{
   font-size:12px;
   letter-spacing:.12em;
   text-transform:uppercase;
   font-weight:800;
   color:rgba(11,18,32,0.6);
+  margin-bottom:6px;
 }
 
 .research-title{
@@ -349,43 +319,28 @@ h2{font-size:30px; margin:0 0 16px}
   margin:0 0 10px;
   color:var(--text-light);
 }
-
 .research-subtitle{
   margin:0 0 14px;
   font-weight:800;
   color:rgba(11,18,32,0.85);
 }
-
 .research-list{
   margin:0;
   padding-left:18px;
   color:rgba(11,18,32,0.75);
   line-height:1.5;
 }
-
-.research-list li{
-  margin-bottom:8px;
-}
+.research-list li{ margin-bottom:8px; }
 
 @media(max-width:900px){
-  .research-card{
-    grid-template-columns:1fr;
-  }
+  .research-card{ grid-template-columns:1fr; }
   .research-media{
     border-right:none;
     border-bottom:3px solid var(--research-pink);
   }
 }
+
 /* ================= WORK EXPERIENCE CARDS ================= */
-
-/* Color tokens */
-:root{
-  --frog-green: #3fb950;   /* frog-style green */
-  --mines-blue: #002d62;   /* Mines blue (already used in Education) */
-  --xp-black: #111111;     /* neutral black */
-}
-
-/* Base card (same structure as research-card) */
 .experience-card{
   display:grid;
   grid-template-columns:320px 1fr;
@@ -395,8 +350,6 @@ h2{font-size:30px; margin:0 0 16px}
   box-shadow:0 14px 34px rgba(0,0,0,0.10);
   margin-bottom:36px;
 }
-
-/* Left media */
 .experience-media{
   display:flex;
   align-items:center;
@@ -404,82 +357,50 @@ h2{font-size:30px; margin:0 0 16px}
   padding:18px;
   background:#ffffff;
 }
-
-/* Image handling */
 .experience-media img{
   width:100%;
   height:100%;
   object-fit:cover;
   border-radius:12px;
 }
+.experience-body{ padding:22px 24px; }
 
-/* Right body */
-.experience-body{
-  padding:22px 24px;
-}
-
-/* Meta line */
-.experience-meta{
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-weight:800;
-  color:rgba(11,18,32,0.6);
-  margin-bottom:6px;
-}
-
-.experience-title{
-  font-size:26px;
-  margin:0 0 6px;
-}
-
+.experience-title{ font-size:26px; margin:0 0 6px; }
 .experience-subtitle{
   margin:0 0 14px;
   font-weight:800;
   color:rgba(11,18,32,0.85);
 }
-
 .experience-list{
   margin:0;
   padding-left:18px;
   color:rgba(11,18,32,0.75);
   line-height:1.5;
 }
+.experience-list li{ margin-bottom:8px; }
 
-.experience-list li{
-  margin-bottom:8px;
-}
+/* Color variants */
+.experience-green{ border:3px solid var(--frog-green); }
+.experience-green .experience-media{ border-right:3px solid var(--frog-green); }
 
-/* ---------- Color variants ---------- */
-.experience-green{
-  border:3px solid var(--frog-green);
-}
-.experience-green .experience-media{
-  border-right:3px solid var(--frog-green);
-}
+.experience-blue{ border:3px solid var(--mines-blue); }
+.experience-blue .experience-media{ border-right:3px solid var(--mines-blue); }
 
-.experience-blue{
-  border:3px solid var(--mines-blue);
-}
-.experience-blue .experience-media{
-  border-right:3px solid var(--mines-blue);
-}
+.experience-black{ border:3px solid var(--xp-black); }
+.experience-black .experience-media{ border-right:3px solid var(--xp-black); }
 
-.experience-black{
-  border:3px solid var(--xp-black);
-}
-.experience-black .experience-media{
-  border-right:3px solid var(--xp-black);
+/* ✅ THIS IS THE FIX: text-only cards become 1 column */
+.experience-card.no-image{
+  grid-template-columns: 1fr;
 }
 
 /* Mobile */
 @media(max-width:900px){
-  .experience-card{
-    grid-template-columns:1fr;
+  .experience-card{ grid-template-columns:1fr; }
+  .experience-media{
+    border-right:none !important;
+    border-bottom:3px solid currentColor;
   }
-.experience-card.no-image{
-  grid-template-columns: 1fr;
-}
 }
 
 /* ================= PROJECTS ================= */
@@ -489,7 +410,6 @@ h2{font-size:30px; margin:0 0 16px}
   gap:18px;
 }
 @media(max-width:800px){.projects{grid-template-columns:1fr}}
-
 .tags span{
   display:inline-block;
   padding:6px 10px;
@@ -624,7 +544,7 @@ footer{
             <p>Expected May 2027</p>
             <ul class="degree-list">
               <li>Orbital Mechanics</li>
-              <li>Optimization Models in Manufacturing</li> 
+              <li>Optimization Models in Manufacturing</li>
             </ul>
           </div>
         </div>
@@ -633,45 +553,37 @@ footer{
 
   </div>
 </section>
-  
+
 <!-- RESEARCH -->
 <section class="light" id="research">
   <div class="container">
     <h2>Research & Publications</h2>
 
     <div class="research-card">
-      <!-- Left photo -->
       <div class="research-media">
-        <!-- Put your actual image here -->
         <img src="assets/research.jpg" alt="Rover mobility research">
       </div>
 
-      <!-- Right content -->
       <div class="research-body">
-<div class="research-meta">
-  ROBOTICS • MACHINE LEARNING &nbsp;|&nbsp; AUG 2025 – PRESENT
-</div>
+        <div class="research-meta">
+          ROBOTICS • MACHINE LEARNING &nbsp;|&nbsp; AUG 2025 – PRESENT
+        </div>
 
         <h3 class="research-title">Robotic Space Exploration (RoSE) Lab</h3>
-        <p class="research-subtitle">
-          Draw Bar Pull • Rover Mobility
-        </p>
+        <p class="research-subtitle">Draw Bar Pull • Rover Mobility</p>
 
         <ul class="research-list">
-          <li>Researching and building a functional prototype to measure the net thrust force from the rover wheels at different
-speeds and payload weight for Draw Bar Pul</li>
-          <li>Performed and recorded 1,600 rover mobility test simulations for Rover Mobility in the Mines Lunar Surface
-Simulator (MLSS)</li>
-          <li>Prepared surfaces, ran experiments, and followed PPE guidelines for controlled environments, culminating in an
-open source datashee</li>
+          <li>Researching and building a functional prototype to measure net thrust force from rover wheels at different speeds and payload weights for draw bar pull.</li>
+          <li>Performed and recorded 1,600 rover mobility test simulations in the Mines Lunar Surface Simulator (MLSS).</li>
+          <li>Prepared surfaces, ran experiments, and followed PPE guidelines for controlled environments, culminating in an open-source datasheet.</li>
           <li>
-  <strong>Publication:</strong>
-  Hopkins, B. C., et al. (2025).
-  <a href="https://github.com/RoSE-Lab-Admin/Rover-Mobility-Dataset" target="_blank">
-    Rover Mobility in a Lunar Analogue Dataset
-  </a>.
-  <em>iSpaRo 2025</em>.
-</li>
+            <strong>Publication:</strong>
+            Hopkins, B. C., et al. (2025).
+            <a href="https://github.com/RoSE-Lab-Admin/Rover-Mobility-Dataset" target="_blank">
+              Rover Mobility in a Lunar Analogue Dataset
+            </a>.
+            <em>iSpaRo 2025</em>.
+          </li>
         </ul>
       </div>
     </div>
@@ -679,8 +591,6 @@ open source datashee</li>
   </div>
 </section>
 
-
-  
 <!-- WORK EXPERIENCE -->
 <section class="light" id="experience">
   <div class="container">
@@ -689,81 +599,81 @@ open source datashee</li>
     <!-- 1) Frog green -->
     <div class="experience-card experience-green">
       <div class="experience-media">
-        <img src="assets/experience1.jpg" alt="Experience 1">
+        <img src="assets/experience1.jpg" alt="FROG-SAT">
       </div>
       <div class="experience-body">
-<h3 class="experience-title">Power Engineering Lead</h3>
-<p class="experience-subtitle">FROG-SAT CubeSat • Power Subsystem • Aug 2025 – Present</p>
+        <h3 class="experience-title">Power Engineering Lead</h3>
+        <p class="experience-subtitle">FROG-SAT CubeSat • Power Subsystem • Aug 2025 – Present</p>
 
-<ul class="experience-list">
-          <li>Creating a 10×10×11 cm, 2 kg CubeSat to detect space debris using RF and Wave-scattering signals from
-Star link satellites</li>
-          <li>Power subsystem lead and CO-leading club members; ensuring solar panel and battery performance and
-standardized power regulation and distribution</li>
+        <ul class="experience-list">
+          <li>Creating a 10×10×11 cm, 2 kg CubeSat to detect space debris using RF and wave-scattering signals from Starlink satellites.</li>
+          <li>Power subsystem lead and co-leading club members; ensuring solar panel and battery performance and standardized power regulation and distribution.</li>
         </ul>
       </div>
     </div>
 
     <!-- 2) Mines blue -->
-<div class="experience-card experience-blue">
-  <div class="experience-media">
-    <img src="assets/mines-logo.png" alt="Colorado School of Mines">
-  </div>
-
-  <div class="experience-body">
-    <h3 class="experience-title">Front Desk Assistant</h3>
-    <p class="experience-subtitle">CS Department • Part-time • Aug 2025 – Present</p>
-
-    <ul class="experience-list">
-      <li>Served as first point of contact for students and staff; resolved routine requests and routed escalations.</li>
-      <li>Proofread emails and documents for clarity and correctness.</li>
-      <li>Helped organize and maintain events in the Computer Science Department.</li>
-    </ul>
-  </div>
-</div>
-
-    <!-- 3) Black -->
     <div class="experience-card experience-blue">
       <div class="experience-media">
-        <img src="assets/experience3.jpg" alt="Experience 3">
+        <img src="assets/mines-logo.png" alt="Colorado School of Mines">
       </div>
-  <div class="experience-body">
-    <h3 class="experience-title">Warehouse Associate</h3>
-    <p class="experience-subtitle">Amazon Warehouse• Seasonal • May 2022 – July 2022</p>
 
-    <ul class="experience-list">
-      <li>Moved packages to specified locations around the warehouse—prepared packages for shipment.</li>
-      <li>Worked in a high intensity enviorment</li>
-      <li>Helped organize and maintain work benches around the warehouse</li>
-    </ul>
+      <div class="experience-body">
+        <h3 class="experience-title">Front Desk Assistant</h3>
+        <p class="experience-subtitle">CS Department • Part-time • Aug 2025 – Present</p>
+
+        <ul class="experience-list">
+          <li>Served as first point of contact for students and staff; resolved routine requests and routed escalations.</li>
+          <li>Proofread emails and documents for clarity and correctness.</li>
+          <li>Helped organize and maintain events in the Computer Science Department.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3) Black -->
+    <div class="experience-card experience-black">
+      <div class="experience-media">
+        <img src="assets/experience3.jpg" alt="Amazon">
+      </div>
+      <div class="experience-body">
+        <h3 class="experience-title">Warehouse Associate</h3>
+        <p class="experience-subtitle">Amazon Warehouse • Seasonal • May 2022 – July 2022</p>
+
+        <ul class="experience-list">
+          <li>Moved packages to specified locations around the warehouse; prepared packages for shipment.</li>
+          <li>Worked in a high intensity environment.</li>
+          <li>Helped organize and maintain work benches around the warehouse.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4) Black (no photo) -->
+    <div class="experience-card experience-black no-image">
+      <div class="experience-body">
+        <h3 class="experience-title">Bookkeeper</h3>
+        <p class="experience-subtitle">JJinc • Part-time • Aug 2020 – Oct 2021</p>
+
+        <ul class="experience-list">
+          <li>Accounted profit and revenue of the company using QuickBooks.</li>
+          <li>Managed payroll for employees.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5) Black (no photo) -->
+    <div class="experience-card experience-black no-image">
+      <div class="experience-body">
+        <h3 class="experience-title">Bookkeeper</h3>
+        <p class="experience-subtitle">Casado Trucking • Part-time • Aug 2020 – Oct 2021</p>
+
+        <ul class="experience-list">
+          <li>Accounted profit and revenue of the company using QuickBooks.</li>
+          <li>Managed payroll for employees.</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
-</div>
-
-<!-- 4) Black (no photo) -->
-<div class="experience-card experience-black no-image">
-  <div class="experience-body">
-    <h3 class="experience-title">Bookkeeper</h3>
-    <p class="experience-subtitle">JJinc • Part-time • Aug 2020 – Oct 2021</p>
-
-    <ul class="experience-list">
-      <li>Accounting profit and revenue of the company using QuickBooks</li>
-      <li>In charge of payroll for employees</li>
-    </ul>
-  </div>
-</div>
-
-<!-- 5) Black (no photo) -->
-<div class="experience-card experience-black no-image">
-  <div class="experience-body">
-    <h3 class="experience-title">Bookkeeper</h3>
-    <p class="experience-subtitle">Casado Trucking • Part-time • Aug 2020 – Oct 2021</p>
-
-    <ul class="experience-list">
-      <li>Accounting profit and revenue of the company using QuickBooks</li>
-      <li>In charge of payroll for employees</li>
-    </ul>
-  </div>
-</div>
 </section>
 
 <!-- PROJECTS -->
